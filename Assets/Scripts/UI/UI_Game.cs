@@ -8,7 +8,7 @@ public class UI_Game : MonoBehaviour
 {
     public static UnityAction wallHited;
     public static UnityAction ballHited;
-    private int _ballHitCounter = 0;
+    private float _ballHitCounter = 0;
     private int _wallHitCounter = 0;
     [SerializeField] private Button buttonExit;
     [SerializeField] private TMPro.TextMeshProUGUI wallHit;
@@ -31,7 +31,11 @@ public class UI_Game : MonoBehaviour
     }
     void BallHited()
     {
-        _ballHitCounter++;
+        // TODO
+        // костыль я знаю но быстро в голову не пришло как верно будет решить выбраной реализации мной отправку от обоих шаров
+        // одновременно, скорее должна быть отдельно система приема сообщений о столкновении что будет проврять если пришло от 
+        // двух обьектов и они оба одинаковы в двух сообщениях то плюсовать 1.
+        _ballHitCounter += 0.5f; 
         ballHit.text = "Ball Hit: " + _ballHitCounter;
     }
 

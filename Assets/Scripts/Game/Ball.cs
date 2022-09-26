@@ -66,12 +66,12 @@ public class Ball : MonoBehaviour
     }
     public void ChangeRandomeColor() 
     {
-        int r = Random.Range(0, dataDic.colorListToUse.Count - 1);
+        int r = Random.Range(0, dataDic.colorListToUse.Count );
         SwichCollor(dataDic.colorListToUse[r]); 
     }
     void StartChangeRandomeColor()
     {
-        int r = Random.Range(0, dataDic.colorListToUse.Count - 1);
+        int r = Random.Range(0, dataDic.colorListToUse.Count);
         _curentColor = dataDic.colorListToUse[r];
         _material.color = _curentColor;
     }
